@@ -86,7 +86,7 @@ function applyEdits() {
 
             var link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
-            link.download = 'gameplay.dat';
+            link.download = 'modded.dat';
             link.click();
 
             closeModal();
