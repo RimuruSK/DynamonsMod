@@ -1,0 +1,301 @@
+* {
+    user-select: none;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 20px;
+    background-color: #202122;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    color: white;
+}
+textarea {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+    background-color: #2F3033;
+    color: white;
+}
+input[type="file"] {
+    display: none;
+}
+label.upload-label {
+    display: inline-block;
+    background-color: #2F3033;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Arial', sans-serif;
+}
+label.upload-label:hover {
+    background-color: #3C404E;
+}
+#fileLabel {
+    margin-bottom: 10px;
+    display: block;
+    font-family: 'Arial', sans-serif;
+}
+button {
+    background-color: #2F3033;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    font-family: 'Arial', sans-serif;
+}
+button:hover {
+    background-color: #3C404E;
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background-color: #2F3033;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 60%;
+    max-width: 400px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s, transform 0.3s;
+}
+.modal-content.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+.modal-header h2 {
+    margin: 0;
+    color: white;
+}
+.modal-switch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.toggle-switch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.toggle-switch-label {
+    flex: 1;
+    margin-right: 10px;
+    color: white;
+}
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: relative;
+    cursor: pointer;
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 20px;
+    transition: 0.4s;
+}
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: #2F3033;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+input:checked + .slider {
+    background-color: #ccc;
+}
+input:focus + .slider {
+    box-shadow: 0 0 1px #ccc;
+}
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+.modal-footer {
+    text-align: right;
+}
+.modal-footer button {
+    background-color: #2F3033;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.modal-footer button:hover {
+    background-color: #3C404E;
+}
+.info-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.info-modal-content {
+    background-color: #2F3033;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 60%;
+    max-width: 400px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s, transform 0.3s;
+    color: white;
+}
+.info-modal-content.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.info-modal-header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+.info-modal-header h2 {
+    margin: 0;
+}
+.info-modal-info {
+    margin-bottom: 15px;
+}
+.info-modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.info-modal-buttons button {
+    background-color: #2F3033;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Arial', sans-serif;
+}
+.info-modal-buttons button:hover {
+    background-color: #3C404E;
+}
+.guide-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.guide-modal-content {
+    background-color: #2F3033;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 60%;
+    max-width: 400px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s, transform 0.3s;
+    color: white;
+}
+.guide-modal-content.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.guide-modal-header {
+    text-align: center;
+    margin-bottom: 15px;
+    font-family: 'Arial', sans-serif;
+}
+.guide-modal-header h2 {
+    margin: 0;
+    text-align: left;
+}
+.guide-modal-steps {
+    margin-bottom: 15px;
+}
+.guide-modal-steps p {
+    margin: 5px 0;
+}
+.guide-modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.guide-modal-buttons button {
+    background-color: #2F3033;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Arial', sans-serif;
+}
+.guide-modal-buttons button.close-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+}
+.guide-modal-buttons button:hover {
+    background-color: #3C404E;
+}
+.mods, .guide {
+    width: 100px;
+    font-size: 15px;
+}
