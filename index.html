@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamons World Modder Tool</title>
+    <title>Dynamons World Modifier</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
 </head>
 <body>
     <label id="fileLabel" class="upload-label" for="fileInput">Select File</label>
     <input type="file" id="fileInput" accept=".dat">
-    <button class="mods" onclick="openModal()">Features</button>
-    <button class="guide" onclick="openGuideModal()">Guide</button>
+    <button class="mods" onclick="openModal()">Mod</button>
 
     <div id="myModal" class="modal">
         <div class="modal-content">
@@ -18,93 +21,90 @@
                 <h2>Modify Features</h2>
                 <span onclick="closeModal()">&#10006;</span>
             </div>
-            <div class="modal-switch">
-                <label class="toggle-switch">
-                    <span class="toggle-switch-label">Unlimited Coins</span>
-                    <input type="checkbox" id="option1">
-                    <span class="slider"></span>
-                </label>
-            </div>
-            <div class="modal-switch">
-                <label class="toggle-switch">
-                    <span class="toggle-switch-label">Unlimited Dust</span>
-                    <input type="checkbox" id="option2">
-                    <span class="slider"></span>
-                </label>
-            </div>
-            <div class="modal-switch">
-                <label class="toggle-switch">
-                    <span class="toggle-switch-label">Best Starting Reward</span>
-                    <input type="checkbox" id="option3">
-                    <span class="slider"></span>
-                </label>
-            </div>
-            <div class="modal-switch">
-                <label class="toggle-switch">
-                    <span class="toggle-switch-label">Legendary Starter</span>
-                    <input type="checkbox" id="option4">
-                    <span class="slider"></span>
-                </label>
-            </div>
-            <div class="modal-switch">
-                <label class="toggle-switch">
-                    <span class="toggle-switch-label">Legendary Enemy</span>
-                    <input type="checkbox" id="option5">
-                    <span class="slider"></span>
-                </label>
-            </div>
-            <div class="modal-switch">
-                <label class="toggle-switch">
-                    <span class="toggle-switch-label">One Hit Kill</span>
-                    <input type="checkbox" id="option6">
-                    <span class="slider"></span>
-                </label>
-            </div>
-            <div class="modal-switch">
-                <label class="toggle-switch">
-                    <span class="toggle-switch-label">Max Level 100</span>
-                    <input type="checkbox" id="option7">
-                    <span class="slider"></span>
-                </label>
+            <div class="modal-body">
+                <div class="modal-switch">
+                    <label class="toggle-switch">
+                        <span class="toggle-switch-label">Unlimited Coins</span>
+                        <input type="checkbox" id="option1">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="modal-switch">
+                    <label class="toggle-switch">
+                        <span class="toggle-switch-label">Unlimited Dust</span>
+                        <input type="checkbox" id="option2">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="modal-switch">
+                    <label class="toggle-switch">
+                        <span class="toggle-switch-label">Best Starting Reward</span>
+                        <input type="checkbox" id="option3">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="modal-switch">
+                    <label class="toggle-switch">
+                        <span class="toggle-switch-label">Best Starter</span>
+                        <input type="checkbox" id="option4">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="modal-switch">
+                    <label class="toggle-switch">
+                        <span class="toggle-switch-label">Legendary Enemy</span>
+                        <input type="checkbox" id="option5">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="modal-switch">
+                    <label class="toggle-switch">
+                        <span class="toggle-switch-label">One Hit Kill</span>
+                        <input type="checkbox" id="option6">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="modal-switch">
+                    <label class="toggle-switch">
+                        <span class="toggle-switch-label">5 Dragon Eggs</span>
+                        <input type="checkbox" id="option7">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="modal-switch">
+                    <label class="toggle-switch">
+                        <span class="toggle-switch-label">Infinite HP</span>
+                        <input type="checkbox" id="option8">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="modal-switch">
+                    <label class="toggle-switch">
+                        <span class="toggle-switch-label">Max Lv20000 (It will not increase any stats of all Dynamon)</span>
+                        <input type="checkbox" id="option9">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="modal-switch">
+                    <label class="toggle-switch">
+                        <span class="toggle-switch-label">Best Starter (Lv20000)</span>
+                        <input type="checkbox" id="option10">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="modal-switch">
+                    <label class="toggle-switch">
+                        <span class="toggle-switch-label">Legendary Enemy (Lv20000)</span>
+                        <input type="checkbox" id="option11">
+                        <span class="slider"></span>
+                    </label>
+                </div>
             </div>
             <div class="modal-footer">
                 <button onclick="applyEdits()">Apply Mods</button>
             </div>
         </div>
     </div>
-
-    <div class="info-modal" id="infoModal">
-        <div class="info-modal-content">
-            <div class="info-modal-header">
-                <h2>Dynamons World</h2>
-            </div>
-            <div class="info-modal-info">
-                <p>This is a tool to help mod the game Dynamons World easily and quickly 🛠️. This tool is created by Rimuru Tempest 👾. You can subscribe to my channel by clicking the button below 🎥!</p>
-            </div>
-            <div class="info-modal-buttons">
-                <button onclick="openLink()">Subscribe me!</button>
-                <button onclick="closeInfoModal()">Close</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="guide-modal" id="guideModal">
-        <div class="guide-modal-content">
-            <div class="guide-modal-buttons">
-                <button class="close-button" onclick="closeGuideModal()">&#10006;</button>
-            </div>
-            <div class="guide-modal-header">
-                <h2 id="guideTitle">Step 1</h2>
-            </div>
-            <div class="guide-modal-steps" id="guideSteps">
-            </div>
-            <div class="guide-modal-buttons">
-                <button id="prevGuideButton" onclick="prevGuideStep()">Previous</button>
-                <button id="nextGuideButton" onclick="nextGuideStep()">Next</button>
-            </div>
-        </div>
-    </div>
-
     <script src="script.js"></script>
 </body>
 </html>
