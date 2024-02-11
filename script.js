@@ -64,22 +64,22 @@ function applyEdits() {
         },
         {
             find: '"maxHP":100',
-            replace: '"maxHP":10000',
+            replace: '"maxHP":1000',
             checkboxId: 'option8'
         },
         {
             find: '"maxMonLevel":55',
-            replace: '"maxMonLevel":20000',
+            replace: '"maxMonLevel":100',
             checkboxId: 'option9'
         },
         {
             find: '[{"type":"earth","id":"kikflick","level":2},{"type":"water","id":"snorky","level":2},{"type":"fire","id":"torchip","level":2}]',
-            replace: '[{"type":"earth","id":"cybeenyx","level":19999},{"type":"water","id":"infinissy","level":19999},{"type":"fire","id":"fierodor","level":19999}]',
+            replace: '[{"type":"earth","id":"cybeenyx","level":100},{"type":"water","id":"infinissy","level":100},{"type":"fire","id":"fierodor","level":100}]',
             checkboxId: 'option10'
         },
         {
             find: '"enemy":{"id":"duckron","level":2}',
-            replace: '"enemy":{"id":"goldonyx","level":20000}',
+            replace: '"enemy":{"id":"goldonyx","level":100}',
             checkboxId: 'option11'
         }
     ];
